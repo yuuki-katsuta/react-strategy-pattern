@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo } from "react";
+import { createContext, type JSX, useContext, useMemo } from "react";
 import { NotFound } from "@/components/NotFound";
 import { type TenantType, useAuth } from "./AuthProvider";
 
@@ -11,7 +11,7 @@ interface CreateTenantProviderOptions<TConfig> {
 }
 
 interface TenantProviderResult<TConfig> {
-	TenantProvider: React.FC<{ children: React.ReactNode }>;
+	TenantProvider: ({ children }: { children: React.ReactNode }) => JSX.Element;
 	useTenantConfig: () => TConfig;
 }
 
